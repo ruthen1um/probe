@@ -43,11 +43,17 @@ $ cmake --preset=<preset>
 $ cmake --build --preset=<preset>
 ```
 
-> [!IMPORTANT]
-> Для корректной работы программы необходимо также обновить окружение, выполнив скрипт `conanrun.sh`:
-> ```
-> $ source build/<target>/generators/conanrun.sh
-> ```
+# Запуск
+
+Для корректной работы программы обновите окружение, выполнив скрипт `conanrun.sh`:
+```
+$ source build/<target>/generators/conanrun.sh
+```
+
+Запустите программу в зависимости от типа сборки:
+```
+$ ./build/<target>/media-finder
+```
 
 # TODO
 * Добавить тесты
