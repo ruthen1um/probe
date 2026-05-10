@@ -11,6 +11,7 @@ class ExampleRecipe(ConanFile):
 
         self.requires("libmagic/5.45")
         self.requires("nlohmann_json/3.12.0")
+        self.requires("taywee-args/6.4.6")
 
     def layout(self):
         cmake_layout(self)
