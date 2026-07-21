@@ -99,12 +99,6 @@ DirectoryStats get_directory_stats(fs::path path) {
     };
 }
 
-// void from_json(const json& j, DirectoryStats& ds) {
-//     j.at("audio").get_to(ds.audio);
-//     j.at("video").get_to(ds.video);
-//     j.at("images").get_to(ds.images);
-// }
-
 [[nodiscard]] std::string_view get_toplevel_type(std::string_view mime_type) {
     return std::string_view{mime_type.data(), mime_type.find('/')};
 }
