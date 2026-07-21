@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 4.3.2)
 
-project(media-finder LANGUAGES CXX)
+project(probe LANGUAGES CXX)
 
 find_package(nlohmann_json REQUIRED)
 find_package(libmagic REQUIRED)
