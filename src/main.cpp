@@ -43,7 +43,6 @@ namespace probe {
     };
 
     namespace config {
-        static const auto OUTPUT_FORMATS = std::vector<std::string>{"plain", "json"};
         static const auto OUTPUT_FORMAT_MAP = std::unordered_map<std::string, OutputFormat>{
             {"plain", OutputFormat::Plain},
             {"json", OutputFormat::Json},

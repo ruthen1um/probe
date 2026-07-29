@@ -1,11 +1,10 @@
 #ifndef MAGIC_HPP
 #define MAGIC_HPP
 
-#include <magic.h>
-
 #include <filesystem>
 #include <stdexcept>
 #include <string>
+#include <memory>
 
 namespace probe {
 
@@ -16,12 +15,18 @@ namespace probe {
     class LibMagic {
     public:
         LibMagic();
-        ~LibMagic() noexcept;
+        ~LibMagic();
 
         [[nodiscard]] std::string get_mime_type(std::filesystem::path path) const;
 
+        LibMagic(const LibMagic&) = delete;
+        LibMagic& operator=(const LibMagic&) = delete;
+
+        LibMagic(LibMagic&& other) noexcept = default;
+        LibMagic& operator=(LibMagic&& other) noexcept = default;
     private:
-        ::magic_t m_cookie;
+        class Impl;
+        std::unique_ptr<Impl> m_impl;
     };
 
 } // namespace probe
